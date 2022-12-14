@@ -14,12 +14,38 @@ public class Emp {
 	public static String UNIVERSITY="UNCC";
 	
 	
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+
+	public void setGender(char gender) {
+		this.gender = gender;
+	}
+
+
+
+	public static void setUNIVERSITY(String uNIVERSITY) {
+		UNIVERSITY = uNIVERSITY;
+	}
+
+
+
 	@Override
 	public String toString() {
 		return "Emp [age=" + age + ", name=" + name + ", gender=" + gender + "]";
 	}
 
-
+	public void display(String n) {
+		System.out.println(toString());
+	}
 
 	/**
 	 * @param args
