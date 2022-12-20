@@ -9,4 +9,7 @@ package com.training.core.oops;
  */
 public abstract class AbstractEx {
  public abstract void display();
+ void lifespan() {
+	 System.out.println("life span");
+ }
 }
