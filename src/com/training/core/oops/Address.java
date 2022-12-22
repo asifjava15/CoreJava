@@ -13,7 +13,7 @@ public class Address {
 	private String city;
 	private String state;
 	private String country;
-	private int zip;
+	private Integer zip;
 
 	public Address(String houseNumber, String street, String city, String state, String country, int zip) {
 		this.houseNumber = houseNumber;

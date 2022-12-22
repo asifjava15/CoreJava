@@ -7,31 +7,32 @@ package com.training.core.oops;
  * @author Asif_
  *
  */
-public class Employee {
+public class Employee{ //implements Comparable<Employee> {
+	private Integer empId;
 	private String name;
-	private int age;
+	private Integer age;
 	private String gender;
 	private Address address;
-	
-	public Employee() {
-		System.out.println("Employee object has been created");
-	}
 	
 	public Employee(String name,int age) {
 		this.name=name;
 		this.age=age;
 	}
-	
-	
-	public Address getAddress() {
-		return address;
+	public Employee(Integer empId,String name,Integer age,String gender,Address address) {
+		this.empId=empId;
+		this.name=name;
+		this.age=age;
+		this.gender=gender;
+		this.address=address;
 	}
 
-	public void setAddress(Address address) {
-		this.address = address;
+	public Integer getEmpId() {
+		return empId;
 	}
 
-	
+	public void setEmpId(Integer empId) {
+		this.empId = empId;
+	}
 
 	public String getName() {
 		return name;
@@ -41,11 +42,11 @@ public class Employee {
 		this.name = name;
 	}
 
-	public int getAge() {
+	public Integer getAge() {
 		return age;
 	}
 
-	public void setAge(int age) {
+	public void setAge(Integer age) {
 		this.age = age;
 	}
 
@@ -57,10 +58,22 @@ public class Employee {
 		this.gender = gender;
 	}
 
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
 	@Override
 	public String toString() {
-		return "Employee [name=" + name + ", age=" + age + ", gender=" + gender + ", address=" + address + "]";
+		return "Employee [empId=" + empId + ", name=" + name + ", age=" + age + ", gender=" + gender + ", address="
+				+ address + "]";
 	}
-	
+//	@Override
+//	public int compareTo(Employee o) {
+//		return this.empId.compareTo(o.getEmpId());
+//	}
 	
 }
