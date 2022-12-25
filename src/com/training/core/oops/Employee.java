@@ -3,6 +3,8 @@
  */
 package com.training.core.oops;
 
+import java.util.Objects;
+
 /**
  * @author Asif_
  *
@@ -75,5 +77,22 @@ public class Employee{ //implements Comparable<Employee> {
 //	public int compareTo(Employee o) {
 //		return this.empId.compareTo(o.getEmpId());
 //	}
+	@Override
+	public int hashCode() {
+		return Objects.hash(address, age, empId, gender, name);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Employee other = (Employee) obj;
+		return Objects.equals(address, other.address) && Objects.equals(age, other.age)
+				&& Objects.equals(empId, other.empId) && Objects.equals(gender, other.gender)
+				&& Objects.equals(name, other.name);
+	}
 	
 }
