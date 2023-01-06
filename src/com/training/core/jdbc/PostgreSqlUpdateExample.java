@@ -5,7 +5,6 @@ package com.training.core.jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -13,7 +12,7 @@ import java.sql.Statement;
  * @author Asif_
  *
  */
-public class PostgreSqlExample {
+public class PostgreSqlUpdateExample {
 
 	/**
 	 * @param args
@@ -35,13 +34,10 @@ public class PostgreSqlExample {
 			System.out.println("Connected to PostgreSQL database!");
 			// Creating the statement
 			Statement statement = connection.createStatement();
-			System.out.println("Reading employee records...");
 			//Executing the query
-			ResultSet resultSet = statement.executeQuery("SELECT name, age, gender FROM db.\"Employee\"");
-			while (resultSet.next()) {
-				System.out.println(
-						/* "Emp ID: " + resultSet.getLong("EmpId") + */", Name: " + resultSet.getString("name")
-						+ ", Age: " + resultSet.getInt("age") + ", Gender: " + resultSet.getString("gender"));
+			int result = statement.executeUpdate("UPDATE db.\"Employee\" set age=36 where \"EmpId\"=5");
+			if(result>0) {
+				System.out.println("Employee record updated succesfully");
 			}
 
 		} /*
